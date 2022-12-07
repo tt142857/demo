@@ -1,0 +1,31 @@
+server:
+  port: '8081'
+  servlet:
+    context-path: /
+# mybatis mapper \uc704\uce58 \uc124\uc815
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/**/*.xml
+  
+# \ucca8\ubd80\ud30c\uc77c \uc800\uc7a5 \uc704\uce58
+atch:
+  file:
+    store:
+      path: data/upload
+
+spring:
+  devtools:
+    livereload:
+      enabled: 'true'
+# h2 console \uc124\uc815      
+  datasource:
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    username: sa
+    url: jdbc:log4jdbc:h2:file:~/test;
+    password: ''
+  h2:
+    console:
+      enabled: 'true'
+      settings:
+        web-allow-others: 'true'
+      path: /h2-console
+      
